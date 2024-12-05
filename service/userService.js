@@ -16,4 +16,8 @@ const addUser = (name, email) => {
   return newUser;
 };
 
-module.exports = { fetchUsers, addUser };
+const findUserById = (id) => {
+  return users.find((user) => user.id === id);
+};
+
+module.exports = { fetchUsers, addUser, findUserById };

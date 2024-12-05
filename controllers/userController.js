@@ -1,7 +1,11 @@
-const {fetchUsers, addUser} = require('./../service/userService');
+const {fetchUsers, addUser, findUserById} = require('./../service/userService');
 
 const getUsers = (req, res) => {
-  const users = fetchUsers();
+  const query = req.query;
+  let users = fetchUsers();
+  if(query.name){
+    users = users.filter(user => user.name.toLowerCase().includes(query.name.toLowerCase()));
+  }
   res.json(users);
 };
 
@@ -11,4 +15,15 @@ const createUser = (req, res) => {
   res.status(201).json(newUser);
 };
 
-module.exports = { getUsers, createUser };
+const getUserById = (req, res) => {
+  const userId = parseInt(req.params.id);
+  const user = findUserById(userId);
+
+  if (!user) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+
+  res.json(user);
+};
+
+module.exports = { getUsers, createUser, getUserById };

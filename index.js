@@ -3,7 +3,9 @@ const app = express();
 const port = 5000;
 const path = require("path");
 const userRoutes = require('./routes/userRoutes');
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
