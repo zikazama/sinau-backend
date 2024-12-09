@@ -2,7 +2,7 @@ const {fetchUsers, addUser, findUserById} = require('./../service/userService');
 
 const getUsers = (req, res) => {
   const query = req.query;
-  let users = fetchUsers();
+  let users = fetchUsers(req);
   if(query.name){
     users = users.filter(user => user.name.toLowerCase().includes(query.name.toLowerCase()));
   }

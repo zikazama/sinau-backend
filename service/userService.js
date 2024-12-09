@@ -1,7 +1,8 @@
 const users = require('../models/userModel');
 
 // Mengambil semua user
-const fetchUsers = () => {
+const fetchUsers = (req) => {
+  console.log(req.username)
   return users;
 };
 
