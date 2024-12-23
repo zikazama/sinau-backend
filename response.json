@@ -1,0 +1,23 @@
+{
+    "status": true,
+    "statusCode": 200,
+    "message": "success",
+    "data": {
+        "users": [
+            {
+                "id": "1",
+                "name": "John Doe",
+                "email": "john.doe@example.com",
+                "password": "XXXXXX_password",
+                "role": "admin"
+            },
+            {
+                "id": "2",
+                "name": "Jane Smith",
+                "email": "jane.smith@example.com",
+                "password": "XXXXXX_password",
+                "role": "user"
+            }
+        ]
+    }
+}

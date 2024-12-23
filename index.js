@@ -13,7 +13,7 @@ require('dotenv').config();
 const connectMongoDB = require('./utils/mongo');
 
 // Connect to MongoDB
-connectMongoDB();
+// connectMongoDB();
 
 app.use(cors());
 app.use(express.json());
